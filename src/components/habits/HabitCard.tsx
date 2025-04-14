@@ -79,7 +79,7 @@ export default function HabitCard({
                 >
                   <Edit size={16} style={{color:"grey"}}/>
                 </Button>
-              </motion.div>
+              </motion.div>.
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
@@ -96,7 +96,7 @@ export default function HabitCard({
                 >
                   <Trash2 size={16} />
                 </Button>
-              </motion.div>
+              </motion.div>.
             </div>
           </div>
           {habit.description && (
