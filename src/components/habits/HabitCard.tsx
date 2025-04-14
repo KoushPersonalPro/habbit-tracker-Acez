@@ -77,7 +77,7 @@ export default function HabitCard({
                   onClick={() => onEdit(habit.id)}
                   className="h-8 w-8"
                 >
-                  <Edit size={16} />
+                  <Edit size={16} style={{color:"grey"}}/>
                 </Button>
               </motion.div>
               <motion.div
