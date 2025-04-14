@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Habbit Tracker - Modern Acez Starter",
+  title: "Habit Tracker - Modern Acez Starter",
   description: "A modern full-stack starter template powered by Next.js",
 };
 
