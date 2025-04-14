@@ -16,7 +16,7 @@ export default async function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" prefetch className="text-xl font-bold flex items-center">
           <Leaf className="w-6 h-6 text-green-600 mr-2" />
-          <span>Streak Tracker</span>
+          <span>ᕼᗩᗷᗷITᔕ</span>
         </Link>
         <div className="flex gap-4 items-center">
           {user ? (
