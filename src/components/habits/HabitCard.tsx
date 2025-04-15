@@ -59,12 +59,13 @@ export default function HabitCard({
       className="w-full"
     >
       <Card
-        className="overflow-hidden border-2 h-full flex flex-col bg-white dark:bg-gray-800 cursor-pointer"
-        onClick={() => router.push(`/dashboard/habit/${habit.id}`)}
+        className="overflow-hidden border-2 h-full flex flex-col bg-white dark:bg-gray-800"
+        
       >
         <CardHeader className="pb-2">
           <div className="flex justify-between items-start">
-            <CardTitle className="text-xl font-bold truncate">
+            <CardTitle className="text-xl font-bold truncate cursor-pointer"
+            onClick={() => router.push(`/dashboard/habit/${habit.id}`)}>
               {habit.name}
             </CardTitle>
             <div className="flex gap-1">
