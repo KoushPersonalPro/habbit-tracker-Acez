@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   CheckCircle,
   Calendar,
@@ -42,6 +43,7 @@ export default function HabitCard({
   onDelete = () => {},
   onEdit = () => {},
 }: HabitCardProps) {
+  const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const growthStage = getGrowthStageData(habit.current_streak);
   const completedToday = isCompletedToday(habit.last_completed_at || null);
@@ -56,7 +58,10 @@ export default function HabitCard({
       onHoverEnd={() => setIsHovered(false)}
       className="w-full"
     >
-      <Card className="overflow-hidden border-2 h-full flex flex-col bg-white dark:bg-gray-800">
+      <Card
+        className="overflow-hidden border-2 h-full flex flex-col bg-white dark:bg-gray-800 cursor-pointer"
+        onClick={() => router.push(`/dashboard/habit/${habit.id}`)}
+      >
         <CardHeader className="pb-2">
           <div className="flex justify-between items-start">
             <CardTitle className="text-xl font-bold truncate">
@@ -77,9 +82,9 @@ export default function HabitCard({
                   onClick={() => onEdit(habit.id)}
                   className="h-8 w-8"
                 >
-                  <Edit size={16} style={{color:"grey"}}/>
+                  <Edit size={16} />
                 </Button>
-              </motion.div>.
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
@@ -96,7 +101,7 @@ export default function HabitCard({
                 >
                   <Trash2 size={16} />
                 </Button>
-              </motion.div>.
+              </motion.div>
             </div>
           </div>
           {habit.description && (
